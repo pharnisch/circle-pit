@@ -8,7 +8,15 @@ var custom_up = null
 var custom_right = null
 var degrees = null
 
+var health = 100
+
 @export var pulled_towards_center = false
+
+var camera = null
+
+func _enter_tree():
+	set_multiplayer_authority(name.to_int())
+	
 
 func _ready() -> void:
 	degrees = randf_range(0,360)
@@ -16,10 +24,24 @@ func _ready() -> void:
 	custom_right = Vector2.RIGHT.rotated(2.0*PI*degrees)
 	set_up_direction(custom_up)
 	transform = transform.rotated(2.0*PI*degrees)
+	
+	if is_multiplayer_authority():
+		#debugging
+		modulate = Color(randf(),randf(),randf())
+		camera = get_parent().get_node("Camera2D")
+		camera.reparent(self)
+
 
 
 
 func _physics_process(delta: float) -> void:
+	if not is_multiplayer_authority():
+		return
+		
+
+	camera.global_transform = self.global_transform
+
+		
 	if pulled_towards_center:
 		var _gravity_dir = (-position).normalized()
 		var _degrees = rad_to_deg(atan2(_gravity_dir.y, _gravity_dir.x))
@@ -39,7 +61,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_custom_gravity() * delta
 
-	# Handle jump.
+	
+		# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity += custom_up * JUMP_VELOCITY
 		print(custom_up)
@@ -47,6 +70,8 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
+
+		
 	if direction:
 		velocity += custom_right * direction * SPEED
 	else:
@@ -60,8 +85,6 @@ func _physics_process(delta: float) -> void:
 		if c_teiler != 0:
 			var up_velocity = (b22*vx - b21*vy)/c_teiler
 			var right_velocity = (-b12*vx - b11*vy)/c_teiler
-			print("up_velocity: ", str(up_velocity))
-			print("right_velocity: ", str(right_velocity))
 			velocity = up_velocity * custom_up
 		#velocity.x = move_toward(velocity.x, 0, SPEED)
 	#speed = move_toward(speed, input * MAX_SPEED, ACCELERATION * delta)

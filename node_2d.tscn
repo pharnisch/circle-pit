@@ -1,21 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://dj1ile7o8dqsr"]
+[gd_scene load_steps=6 format=3 uid="uid://dj1ile7o8dqsr"]
 
 [ext_resource type="PackedScene" uid="uid://ctsjx8s8yjnmv" path="res://static_body_2d.tscn" id="1_inqt5"]
 [ext_resource type="Script" path="res://node_2d.gd" id="1_sbf3e"]
-[ext_resource type="PackedScene" uid="uid://doijb6q25wrqh" path="res://character_body_2d.tscn" id="2_pv7d2"]
-[ext_resource type="Script" path="res://animatable_body_2d.gd" id="3_lhmh8"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf7sg"]
-size = Vector2(3.27115, 88.4061)
+[ext_resource type="PackedScene" uid="uid://chs68cndt2e36" path="res://animatable_body_2d.tscn" id="3_1xn2n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dov8i"]
 radius = 85.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfofc"]
-size = Vector2(398, 20)
+[sub_resource type="SphereMesh" id="SphereMesh_txryw"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_sbf3e")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("1_inqt5")]
 rotation = 0.191986
@@ -214,371 +212,59 @@ rotation = 0.191986
 
 [node name="StaticBody2D" parent="StaticBody2D2" instance=ExtResource("1_inqt5")]
 rotation = -0.191986
-scale = Vector2(1, 1)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_pv7d2")]
-position = Vector2(55, -93)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(166.75, 210.625)
-rotation = 0.47822
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D"]
-rotation = 0.714859
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D"]
-position = Vector2(166.75, 210.625)
-rotation = 0.47822
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D/StaticBody2D"]
-rotation = 0.714859
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D/StaticBody2D"]
-position = Vector2(166.75, 210.625)
-rotation = 0.47822
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D"]
-rotation = 0.714859
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
-position = Vector2(166.75, 210.625)
-rotation = 0.47822
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
-rotation = 0.714859
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
-position = Vector2(166.75, 210.625)
-rotation = 0.47822
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
-rotation = 0.714859
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
-position = Vector2(166.75, 210.625)
-rotation = 0.47822
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
-rotation = 0.714859
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
-position = Vector2(166.75, 210.625)
-rotation = 0.47822
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
-rotation = 0.714859
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
-position = Vector2(166.75, 210.625)
-rotation = 0.47822
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
-rotation = 0.714764
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
-position = Vector2(166.75, 210.625)
-rotation = 0.47822
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-rotation = 0.297442
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(190.07, 261.79)
-rotation = -1.79594
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="StaticBody2D3"]
-rotation = 0.775309
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3/StaticBody2D3"]
-position = Vector2(190.07, 261.79)
-rotation = -1.79594
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="StaticBody2D3/StaticBody2D3"]
-rotation = 0.623362
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3/StaticBody2D3/StaticBody2D3"]
-position = Vector2(190.07, 261.79)
-rotation = -1.79594
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="StaticBody2D3/StaticBody2D3/StaticBody2D3"]
-rotation = 0.794723
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3"]
-position = Vector2(190.07, 261.79)
-rotation = -1.79594
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3"]
-rotation = 0.711462
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3"]
-position = Vector2(190.07, 261.79)
-rotation = -1.79594
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3"]
-rotation = 0.676474
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3"]
-position = Vector2(190.07, 261.79)
-rotation = -1.79594
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3"]
-rotation = 0.70675
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3"]
-position = Vector2(190.07, 261.79)
-rotation = -1.79594
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3"]
-rotation = 0.746126
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3"]
-position = Vector2(190.07, 261.79)
-rotation = -1.79594
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3"]
-rotation = 0.654933
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3/StaticBody2D3"]
-position = Vector2(190.07, 261.79)
-rotation = -1.79594
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
-rotation = 0.757473
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2(30.7623, 281.423)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="StaticBody2D4"]
-rotation = 0.757473
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4/StaticBody2D4"]
-position = Vector2(30.7623, 281.423)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="StaticBody2D4/StaticBody2D4"]
-rotation = 0.757473
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4/StaticBody2D4/StaticBody2D4"]
-position = Vector2(30.7623, 281.423)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="StaticBody2D4/StaticBody2D4/StaticBody2D4"]
-rotation = 0.757473
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4/StaticBody2D4/StaticBody2D4/StaticBody2D4"]
-position = Vector2(30.7623, 281.423)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="StaticBody2D4/StaticBody2D4/StaticBody2D4/StaticBody2D4"]
-rotation = 0.757473
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4/StaticBody2D4/StaticBody2D4/StaticBody2D4/StaticBody2D4"]
-position = Vector2(30.7623, 281.423)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="StaticBody2D4/StaticBody2D4/StaticBody2D4/StaticBody2D4/StaticBody2D4"]
-rotation = 0.757473
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4/StaticBody2D4/StaticBody2D4/StaticBody2D4/StaticBody2D4/StaticBody2D4"]
-position = Vector2(30.7623, 281.423)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="StaticBody2D4/StaticBody2D4/StaticBody2D4/StaticBody2D4/StaticBody2D4/StaticBody2D4"]
-rotation = 0.757473
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4/StaticBody2D4/StaticBody2D4/StaticBody2D4/StaticBody2D4/StaticBody2D4/StaticBody2D4"]
-position = Vector2(30.7623, 281.423)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="."]
-rotation = 0.757473
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
-position = Vector2(-22.8792, 160.644)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5/CollisionShape2D"]
-position = Vector2(8.15297, 48.8009)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="StaticBody2D5"]
-rotation = 0.757473
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5/StaticBody2D5"]
-position = Vector2(-22.8792, 160.644)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5/StaticBody2D5/CollisionShape2D"]
-position = Vector2(8.15297, 48.8009)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="StaticBody2D5/StaticBody2D5"]
-rotation = 0.757473
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5/StaticBody2D5/StaticBody2D5"]
-position = Vector2(-22.8792, 160.644)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5/StaticBody2D5/StaticBody2D5/CollisionShape2D"]
-position = Vector2(8.15297, 48.8009)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="StaticBody2D5/StaticBody2D5/StaticBody2D5"]
-rotation = 0.757473
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5"]
-position = Vector2(-22.8792, 160.644)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/CollisionShape2D"]
-position = Vector2(8.15297, 48.8009)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5"]
-rotation = 0.757473
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5"]
-position = Vector2(-22.8792, 160.644)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/CollisionShape2D"]
-position = Vector2(8.15297, 48.8009)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5"]
-rotation = 0.757473
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5"]
-position = Vector2(-22.8792, 160.644)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/CollisionShape2D"]
-position = Vector2(8.15297, 48.8009)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5"]
-rotation = 0.757473
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5"]
-position = Vector2(-22.8792, 160.644)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/CollisionShape2D"]
-position = Vector2(8.15297, 48.8009)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5"]
-rotation = 0.757473
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5"]
-position = Vector2(-22.8792, 160.644)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/StaticBody2D5/CollisionShape2D"]
-position = Vector2(8.15297, 48.8009)
-rotation = -0.836914
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_yf7sg")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
 shape = SubResource("CircleShape2D_dov8i")
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-script = ExtResource("3_lhmh8")
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D6"]
+position = Vector2(-1.19209e-07, 2)
+scale = Vector2(173.111, 168.484)
+mesh = SubResource("SphereMesh_txryw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(189, 0)
-shape = SubResource("RectangleShape2D_pfofc")
+[node name="AnimatableBody2D" parent="." instance=ExtResource("3_1xn2n")]
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("2_pv7d2")]
-position = Vector2(55, -93)
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://character_body_2d.tscn")
+spawn_path = NodePath("..")
 
-[node name="CharacterBody2D3" parent="." instance=ExtResource("2_pv7d2")]
-position = Vector2(55, -93)
+[node name="AnimatableBody2D2" parent="." instance=ExtResource("3_1xn2n")]
+position = Vector2(-14, 208)
+rotation = -0.400319
+scale = Vector2(0.5, 0.5)
 
-[node name="CharacterBody2D4" parent="." instance=ExtResource("2_pv7d2")]
-position = Vector2(55, -93)
+[node name="AnimatableBody2D2" parent="AnimatableBody2D2" instance=ExtResource("3_1xn2n")]
+position = Vector2(0, 218)
+rotation = -0.400319
+scale = Vector2(0.5, 0.5)
 
-[node name="CharacterBody2D5" parent="." instance=ExtResource("2_pv7d2")]
-position = Vector2(55, -93)
+[node name="AnimatableBody2D3" parent="." instance=ExtResource("3_1xn2n")]
+position = Vector2(-310, -1)
+rotation = 0.549628
+scale = Vector2(0.5, 0.5)
 
-[node name="CharacterBody2D6" parent="." instance=ExtResource("2_pv7d2")]
-position = Vector2(55, -93)
+[node name="AnimatableBody2D3" parent="AnimatableBody2D3" instance=ExtResource("3_1xn2n")]
+position = Vector2(397.93, 190.137)
+rotation = 0.549628
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatableBody2D4" parent="." instance=ExtResource("3_1xn2n")]
+position = Vector2(-185, -195)
+rotation = -0.424075
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatableBody2D4" parent="AnimatableBody2D4" instance=ExtResource("3_1xn2n")]
+position = Vector2(-58.4135, 265.48)
+rotation = -0.424075
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatableBody2D5" parent="." instance=ExtResource("3_1xn2n")]
+position = Vector2(133, -161)
+rotation = 0.601008
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatableBody2D5" parent="AnimatableBody2D5" instance=ExtResource("3_1xn2n")]
+position = Vector2(-263.522, -214.588)
+rotation = 0.601008
+scale = Vector2(0.5, 0.5)

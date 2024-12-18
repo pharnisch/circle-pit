@@ -1,9 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://doijb6q25wrqh"]
+[gd_scene load_steps=5 format=3 uid="uid://doijb6q25wrqh"]
 
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_3o77o"]
 [ext_resource type="Texture2D" uid="uid://ot5flehy1rqi" path="res://icon.svg" id="2_corgb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8hht4"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ghnyg"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:modulate")
+properties/2/spawn = true
+properties/2/replication_mode = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_3o77o")
@@ -14,3 +25,6 @@ shape = SubResource("CapsuleShape2D_8hht4")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.15, 0.25)
 texture = ExtResource("2_corgb")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_ghnyg")
